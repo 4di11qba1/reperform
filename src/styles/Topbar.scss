@@ -1,0 +1,35 @@
+.topbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 25px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.topbar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 14px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.topbar-content:hover {
+    background-color: #f3f6f9;
+}
+
+.topbar-content:hover .user-email {
+    color: #3699FF !important;
+}
+
+.user-name {
+    font-weight: bolder;
+}
+
+.user-email {
+    transition: all 0.3s;;
+    font-weight: thin;
+}

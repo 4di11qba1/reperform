@@ -1,0 +1,74 @@
+.table-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 30px;
+  border-radius: 10px;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 12px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-filters {
+  display: flex;
+  gap: 5px;
+}
+
+.table-filters input,
+.table-filters button {
+  width: auto;
+}
+
+.table-filters div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.table-filters input {
+  padding: 5px;
+}
+
+// .table-filters button {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-size: 30px;
+//   width: 60px;
+// }
+
+.table td {
+  width: auto;
+  white-space: nowrap;
+}
+
+.table th,
+.table td {
+  border: 1px solid #dcdcdc;
+  padding: 8px;
+  text-align: center;
+}
+
+.table td {
+  font-weight: lighter;
+}
+
+.table-delete-icon {
+  font-size: 30px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.table-delete-icon:hover {
+  color: red !important;
+  transition: all 0.3s;
+}

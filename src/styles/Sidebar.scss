@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 260px;
+  transition: all 0.5s;
+  z-index: 2;
+}
+
+.sidebar .logo-details {
+  height: 60px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 20px;
+}
+
+.sidebar .logo-details img {
+  width: 60px;
+  height: 40px;
+  justify-self: center;
+  align-self: end;
+}
+
+.sidebar .logo-details .bars {
+  width: 35px;
+  height: 25px;
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
+}
+
+.sidebar .logo-details .logo-name {
+  font-size: 22px;
+  color: white;
+}
+
+.nav-links {
+  height: 100%;
+  padding-top: 30px;
+}
+
+.nav-item-link {
+  position: relative;
+  list-style: none;
+  padding: 0 20px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.nav-item-link:hover .nav-icon,
+.nav-item-link:hover .link-name,
+.nav-item-link:hover .sub-menu {
+  transition: all 0.4s ease;
+  color: #01b1b0 !important;
+}
+
+.nav-item-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item-link:hover .sub-menu {
+  background: rgba(255, 255, 255, 0.005);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-icon {
+  text-align: center;
+  line-height: 50px;
+  align-self: center;
+  transition: all 0.4s ease;
+  font-size: 18px;
+}
+
+.nav-links-div {
+  display: grid;
+  grid-template-columns: 20% 46% 33%;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.link-name {
+  font-size: 16px;
+  font-weight: 400;
+  transition: all 0.4s ease;
+}
+
+.sub-menu {
+  width: 100%;
+  transition: all 0.4s ease;
+  display: none;
+  opacity: 0;
+}
+
+.nav-item-link:hover .sub-menu {
+  opacity: 1;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.sub-menu li {
+  width: 100%;
+  list-style: none;
+}
+
+.sub-menu a {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.sub-menu a:hover {
+  transition: all 0.3s ease;
+  color: #01b1b0 !important;
+}
+
+.sidebar.close .sub-menu {
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  border-radius: 0 10px 10px 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  display: block;
+}
+
+.sidebar.close .nav-item-link:hover .sub-menu {
+  transition: all 0.4s ease;
+  display: block;
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
