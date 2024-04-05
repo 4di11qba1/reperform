@@ -1,7 +1,7 @@
 import React from "react";
 import { colors } from "../constants/colors";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faEdit, faEye } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 function Table({ heading, data, onDeleteRow, addDataRoute, showFilters }) {
@@ -66,12 +66,27 @@ function Table({ heading, data, onDeleteRow, addDataRoute, showFilters }) {
                 </td>
               ))}
               <td>
-                <FontAwesomeIcon
-                  icon={faTrash}
-                  onClick={() => handleDeleteRow(rowIndex)}
-                  className="table-delete-icon"
-                  style={{ color: colors.controlBTN }}
-                />
+                {!showFilters ? (
+                  <FontAwesomeIcon
+                    icon={faTrash}
+                    onClick={() => handleDeleteRow(rowIndex)}
+                    className="table-icon table-delete-icon"
+                    style={{ color: colors.controlBTN }}
+                  />
+                ) : (
+                  <div>
+                    <FontAwesomeIcon
+                      className="table-icon table-view-icon"
+                      style={{ color: colors.controlBTN }}
+                      icon={faEye}
+                    />
+                    <FontAwesomeIcon
+                      className="table-icon table-edit-icon"
+                      style={{ color: colors.controlBTN, marginLeft: "10px" }}
+                      icon={faEdit}
+                    />
+                  </div>
+                )}
               </td>
             </tr>
           ))}

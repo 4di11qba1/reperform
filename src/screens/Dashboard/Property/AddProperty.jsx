@@ -1,17 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "../../../components/Form";
 import Divider from "../../../components/Divider";
 import Checkbox from "../../../components/Checkbox";
+import DynamicFormSection from "../../../components/DynamicFormSection";
 
 function Property() {
   return (
     <Form heading={"Property Management - Daily Log"}>
       <div className="property-section">
         <h4>Market Appraisals Booked</h4>
-        <div
-          className="form-input-div"
-          style={{ alignSelf: "center", width: "40%" }}
-        >
+        <div className="form-input-div" style={{ width: "50%" }}>
           <label htmlFor="appraisals">Number</label>
           <input
             id="appraisals"
@@ -21,31 +19,23 @@ function Property() {
           />
         </div>
       </div>
-
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>New Managements Signed</h4>
-        <div
-          className="form-input-div"
-          style={{ alignSelf: "center", width: "40%" }}
-        >
+        <div className="form-input-div" style={{ width: "50%" }}>
           <label htmlFor="mgmt">Number</label>
           <input
-            id="managements"
+            id="mgmt"
             type="number"
-            name="managements"
+            name="mgmt"
             placeholder="Enter Managements Number"
           />
         </div>
       </div>
-
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>Lost Managements</h4>
-        <div
-          className="form-input-div"
-          style={{ alignSelf: "center", width: "40%" }}
-        >
+        <div className="form-input-div" style={{ width: "50%" }}>
           <label htmlFor="lost-mgmt">Number</label>
           <input
             id="lost-mgmt"
@@ -56,13 +46,21 @@ function Property() {
         </div>
       </div>
 
+      {/* Dynamic Inputs Section */}
       <Divider orientation={"h"} width={"1.5px"} />
+      {dynamicSections1.map((section, index) => {
+        return (
+          <React.Fragment key={index}>
+            <DynamicFormSection predefinedSection={section} />
+            <Divider orientation={"h"} width={"1.5px"} />
+          </React.Fragment>
+        );
+      })}
+      {/* Dynamic Inputs Section */}
+
       <div className="property-section">
         <h4>New Lease Signings</h4>
-        <div
-          className="form-input-div"
-          style={{ alignSelf: "center", width: "40%" }}
-        >
+        <div className="form-input-div" style={{ width: "50%" }}>
           <label htmlFor="lease">Number</label>
           <input
             id="lease"
@@ -72,14 +70,10 @@ function Property() {
           />
         </div>
       </div>
-
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>Routine Inspections</h4>
-        <div
-          className="form-input-div"
-          style={{ alignSelf: "center", width: "40%" }}
-        >
+        <div className="form-input-div" style={{ width: "50%" }}>
           <label htmlFor="inspection">Number</label>
           <input
             id="inspection"
@@ -89,14 +83,10 @@ function Property() {
           />
         </div>
       </div>
-
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>Ingoing Inspection Reports</h4>
-        <div
-          className="form-input-div"
-          style={{ alignSelf: "center", width: "40%" }}
-        >
+        <div className="form-input-div" style={{ width: "50%" }}>
           <label htmlFor="in-inspection">Number</label>
           <input
             id="in-inspection"
@@ -106,14 +96,10 @@ function Property() {
           />
         </div>
       </div>
-
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>Outgoing Inspection Reports</h4>
-        <div
-          className="form-input-div"
-          style={{ alignSelf: "center", width: "40%" }}
-        >
+        <div className="form-input-div" style={{ width: "50%" }}>
           <label htmlFor="out-inspection">Number</label>
           <input
             id="out-inspection"
@@ -123,14 +109,10 @@ function Property() {
           />
         </div>
       </div>
-
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>Vacate Notices Received</h4>
-        <div
-          className="form-input-div"
-          style={{ alignSelf: "center", width: "40%" }}
-        >
+        <div className="form-input-div" style={{ width: "50%" }}>
           <label htmlFor="notices">Number</label>
           <input
             id="notices"
@@ -140,12 +122,11 @@ function Property() {
           />
         </div>
       </div>
-
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>Vacant Properties</h4>
         <div style={{ display: "flex", gap: "20px" }}>
-          <div className="form-input-div" style={{ alignSelf: "center" }}>
+          <div className="form-input-div">
             <label htmlFor="vacant-properties">Vacancies</label>
             <input
               id="vacant-properties"
@@ -154,7 +135,7 @@ function Property() {
               placeholder="Add Number"
             />
           </div>
-          <div className="form-input-div" style={{ alignSelf: "center" }}>
+          <div className="form-input-div">
             <label htmlFor="vacant-rates">Vacancy Rate</label>
             <input
               id="vacant-rates"
@@ -165,14 +146,10 @@ function Property() {
           </div>
         </div>
       </div>
-
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>Arrears</h4>
-        <div
-          className="form-input-div"
-          style={{ alignSelf: "center", width: "40%" }}
-        >
+        <div className="form-input-div" style={{ width: "50%" }}>
           <label htmlFor="arrears">Amount $</label>
           <input
             id="arrears"
@@ -183,13 +160,21 @@ function Property() {
         </div>
       </div>
 
+      {/* Dynamic Inputs Section */}
       <Divider orientation={"h"} width={"1.5px"} />
+      {dynamicSections2.map((section, index) => {
+        return (
+          <React.Fragment key={index}>
+            <DynamicFormSection predefinedSection={section} />
+            <Divider orientation={"h"} width={"1.5px"} />
+          </React.Fragment>
+        );
+      })}
+      {/* Dynamic Inputs Section */}
+
       <div className="property-section">
         <h4>Tribunal Matters</h4>
-        <div
-          className="form-input-div"
-          style={{ alignSelf: "center", width: "40%" }}
-        >
+        <div className="form-input-div" style={{ width: "50%" }}>
           <label htmlFor="tribunal">Address</label>
           <input
             id="tribunal"
@@ -199,14 +184,12 @@ function Property() {
           />
         </div>
       </div>
-
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>Training</h4>
         <Checkbox text={"Property Management Meeting"} fontSize="12px" />
         <Checkbox text={"Networking Event"} fontSize="12px" />
       </div>
-
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>Wellness & Mindset</h4>
@@ -217,3 +200,53 @@ function Property() {
 }
 
 export default Property;
+
+const dynamicSections1 = [
+  {
+    id: 0,
+    heading: "Lease Applications Received",
+    inputFields: [
+      [
+        {
+          id: 0,
+          label: "Applications Received",
+          placeholder: "Add number",
+          value: "",
+        },
+        {
+          id: 0,
+          label: "Address",
+          placeholder: "Enter a location",
+          value: "",
+        },
+      ],
+    ],
+  },
+];
+
+const dynamicSections2 = [
+  {
+    id: 0,
+    heading: "Rent Increases",
+    inputFields: [
+      [{ id: 1, label: "Address", placeholder: "Enter a location", value: "" }],
+    ],
+  },
+  {
+    id: 0,
+    heading: "Rent Reductions",
+    inputFields: [
+      [{ id: 2, label: "Address", placeholder: "Enter a location", value: "" }],
+    ],
+  },
+  {
+    id: 0,
+    heading: "Maintenance",
+    inputFields: [
+      [
+        { id: 3, label: "Address", placeholder: "Enter a location", value: "" },
+        { id: 4, label: "Hours", placeholder: "Enter hours", value: "" },
+      ],
+    ],
+  },
+];

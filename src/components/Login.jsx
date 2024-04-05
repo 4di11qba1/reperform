@@ -21,6 +21,7 @@ function Login({ handleShowLogin }) {
               className="form-button"
               onClick={handleShowLogin}
               style={{ color: colors.controlBTN }}
+              tabIndex={1}
             >
               Create an Account
             </a>
@@ -39,6 +40,7 @@ function Login({ handleShowLogin }) {
               setEmail(e.target.value);
             }}
             autoComplete="on"
+            tabIndex={2}
           />
           {/* <p className='danger form-p' id='validation-message-email'></p> */}
         </div>
@@ -53,7 +55,12 @@ function Login({ handleShowLogin }) {
               Forgot Password?
             </a>
           </label>
-          <input id="pwd" type="password" name="password" /*required*/ />
+          <input
+            id="pwd"
+            type="password"
+            name="password"
+            /*required*/ tabIndex={3}
+          />
           {/* <p className='danger' id='validation-message-password'></p> */}
         </div>
         <button
@@ -65,6 +72,7 @@ function Login({ handleShowLogin }) {
             backgroundColor: colors.controlBTN,
             fontSize: "17px",
           }}
+          tabIndex={4}
         >
           Sign In
         </button>

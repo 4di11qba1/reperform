@@ -1,0 +1,110 @@
+.multi-step-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.form-step {
+  text-align: center;
+  width: calc(100% / 5);
+}
+
+.form-step__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #dcdcdc;
+  z-index: 5;
+}
+
+.form-step__label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 120px;
+  align-items: center;
+  font-size: 14px;
+  position: relative;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.form-step__label::after {
+  content: "";
+  width: 100%;
+  height: 10px;
+  background: #dcdcdc;
+  position: absolute;
+  left: -50%;
+  top: 15px;
+  transition: all 0.5s;
+  z-index: 4;
+}
+
+.form-step__label.active::after {
+  background-color: #01b1b0;
+  transition: all 0.5s;
+  opacity: 1;
+}
+
+.form-step__label.first::after {
+  opacity: 0;
+  background-color: #01b1b0;
+  transition: all 0.5s;
+}
+
+.form-content {
+  padding-bottom: 20px;
+}
+
+.step-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.step-buttons button {
+  max-width: 50%;
+}
+
+.form-content input[type="text"],
+.form-content input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-actions {
+  text-align: center;
+}
+
+.form-actions button {
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-steps {
+    flex-direction: column;
+  }
+
+  .form-step {
+    margin-bottom: 10px;
+  }
+}

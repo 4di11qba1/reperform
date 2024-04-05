@@ -5,10 +5,13 @@ import { Routes, Route } from "react-router-dom";
 import UserProfile from "./UserProfile";
 import Footer from "../../components/Footer";
 import AllTargets from "./Targets/AllTargets";
+import AllProperties from "./Property/AllProperties";
 import Index from "./Index";
 import AddProperty from "./Property/AddProperty";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import AddSales from "./Sales/AddSales";
+import AllSales from "./Sales/AllSales";
 
 function Dashboard({ openSidebar, handleSideBar }) {
   const location = useLocation();
@@ -57,13 +60,20 @@ function Dashboard({ openSidebar, handleSideBar }) {
                   key={location.pathname}
                   element={<UserProfile />}
                 />
+                <Route exact path="/add-sales" element={<AddSales />} />
+                <Route exact path="/all-sales" element={<AllSales />} />
                 <Route
                   exact
                   path="/targets/*"
                   key={location.pathname}
                   element={<AllTargets user={user} />}
                 />
-                <Route exact path="/add-property/*" element={<AddProperty />} />
+                <Route exact path="/add-property" element={<AddProperty />} />
+                <Route
+                  exact
+                  path="/all-properties"
+                  element={<AllProperties />}
+                />
               </Routes>
             </motion.div>
           </AnimatePresence>

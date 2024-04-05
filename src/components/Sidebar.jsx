@@ -79,7 +79,7 @@ const navList = [
     text: "Sales",
     subItems: [
       { subText: "Add Daily Activity", subRoute: "/dashboard/add-sales" },
-      { subText: "Daily Activity Archive", subRoute: "/dashboard/sales" },
+      { subText: "Daily Activity Archive", subRoute: "/dashboard/all-sales" },
     ],
     route: null,
   },
@@ -91,7 +91,7 @@ const navList = [
       { subText: "Add Daily Activity", subRoute: "/dashboard/add-property" },
       {
         subText: "Daily Activity Archive",
-        subRoute: "/dashboard/properties",
+        subRoute: "/dashboard/all-properties",
       },
     ],
     route: null,

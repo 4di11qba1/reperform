@@ -36,15 +36,9 @@
 
 .table-filters input {
   padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #dcdcdc;
 }
-
-// .table-filters button {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   font-size: 30px;
-//   width: 60px;
-// }
 
 .table td {
   width: auto;
@@ -62,7 +56,7 @@
   font-weight: lighter;
 }
 
-.table-delete-icon {
+.table-icon {
   font-size: 30px;
   transition: all 0.3s;
   cursor: pointer;
@@ -70,5 +64,11 @@
 
 .table-delete-icon:hover {
   color: red !important;
+  transition: all 0.3s;
+}
+
+.table-view-icon:hover,
+.table-edit-icon:hover {
+  color: #dcdcdc !important;
   transition: all 0.3s;
 }
