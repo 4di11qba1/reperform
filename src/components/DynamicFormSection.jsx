@@ -1,33 +1,31 @@
 import React, { useState } from "react";
 import { colors } from "../constants/colors";
 
-function DynamicFormSection({ predefinedSection }) {
+function DynamicFormSection({ predefinedSection, inputWidth = "50%" }) {
   const [section, setSection] = useState(predefinedSection);
 
   const addInputField = () => {
-    const newInputFields = predefinedSection.inputFields[0].map(
-      (field, index) => ({
-        ...field,
-        id: `${field.id}-${section.inputFields.length}-${index}`,
-      })
-    );
+    const newInputFields = predefinedSection.fields[0].map((field, index) => ({
+      ...field,
+      id: `${field.id}-${section.fields.length}-${index}`,
+    }));
 
-    const updatedInputFields = [...section.inputFields, newInputFields];
+    const updatedInputFields = [...section.fields, newInputFields];
     const updatedSection = {
       ...section,
-      inputFields: updatedInputFields,
+      fields: updatedInputFields,
     };
     setSection(updatedSection);
   };
 
   const removeInputField = (arrayIndex) => {
-    const updatedInputFields = section.inputFields.filter(
+    const updatedInputFields = section.fields.filter(
       (_, idx) => idx !== arrayIndex
     );
 
     const updatedSection = {
       ...section,
-      inputFields: updatedInputFields,
+      fields: updatedInputFields,
     };
 
     setSection(updatedSection);
@@ -36,7 +34,7 @@ function DynamicFormSection({ predefinedSection }) {
   return (
     <div className="property-section">
       <div className="section-header">
-        <h4>{section.heading}</h4>
+        <h3>{section.heading}</h3>
         <button
           className="control-btn-revert"
           style={{
@@ -53,11 +51,22 @@ function DynamicFormSection({ predefinedSection }) {
           +
         </button>
       </div>
-      {section.inputFields.map((itemArray, arrayIndex) => (
+      {section.fields.map((itemArray, arrayIndex) => (
         <div key={arrayIndex}>
-          <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              gap: "10px",
+              alignItems: "center",
+              flexWrap: "wrap",
+            }}
+          >
             {itemArray.map((item, index) => (
-              <div className="form-input-div" key={index}>
+              <div
+                className="form-input-div"
+                style={{ width: "40%" }}
+                key={index}
+              >
                 <label
                   htmlFor={`${item.id}-${arrayIndex}-${index}`}
                   aria-label={item.label}
@@ -69,18 +78,29 @@ function DynamicFormSection({ predefinedSection }) {
                     display: "flex",
                     alignItems: "center",
                     gap: "5px",
+                    width: itemArray.length > 1 ? "100%" : inputWidth,
                   }}
                 >
-                  <input
-                    id={`${item.id}-${arrayIndex}-${index}`} // Use unique ID
-                    name={`${item.id}-${arrayIndex}-${index}`} // Use unique ID
-                    type="text"
-                    placeholder={item.placeholder}
-                  />
+                  {item.type === "select" ? (
+                    <select>
+                      {item.options.map((option, index) => (
+                        <option key={index} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                  ) : (
+                    <input
+                      id={`${item.id}-${arrayIndex}-${index}`} // Use unique ID
+                      name={`${item.id}-${arrayIndex}-${index}`} // Use unique ID
+                      type="text"
+                      placeholder={item.placeholder}
+                    />
+                  )}
                 </div>
               </div>
             ))}
-            {section.inputFields.length > 1 && (
+            {section.fields.length > 1 && (
               <button
                 className="control-btn-revert"
                 style={{

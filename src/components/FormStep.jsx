@@ -1,11 +1,11 @@
 import React from "react";
 import { colors } from "../constants/colors";
 import Divider from "./Divider";
+import FormSection from "./FormSection";
+import DynamicFormSection from "./DynamicFormSection";
 
 const FormStep = ({
   step,
-  formData,
-  handleChange,
   prevStep,
   nextStep,
   stepContent,
@@ -14,20 +14,22 @@ const FormStep = ({
 }) => {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-      <h2>{`Step ${step}: ${stepContent.label}`}</h2>
-      {stepContent.fields.map((field, index) => (
-        <div key={index}>
-          <label>{field.label}:</label>
-          <input
-            type={field.type}
-            name={field.name}
-            value={formData[field.name]}
-            onChange={handleChange}
-            required={field.required}
-          />
-        </div>
+      {stepContent.sections.map((section, index) => (
+        <React.Fragment key={index}>
+          {section.dynamic ? (
+            <>
+              <Divider orientation={"h"} width={"1.5px"} />
+              <DynamicFormSection predefinedSection={section} />
+            </>
+          ) : (
+            <>
+              <Divider orientation={"h"} width={"1.5px"} />
+              <FormSection sectionData={section} inputWidth="50%" />
+            </>
+          )}
+        </React.Fragment>
       ))}
-      <Divider orientation={"h"} width={"1.5px"} />
+      <Divider orientation={"h"} width={"2px"} />
       <div
         className="step-buttons"
         style={{ justifyContent: step === 1 ? "center" : "space-between" }}

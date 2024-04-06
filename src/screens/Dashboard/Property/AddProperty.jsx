@@ -125,7 +125,7 @@ function Property() {
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>Vacant Properties</h4>
-        <div style={{ display: "flex", gap: "20px" }}>
+        <div style={{ display: "flex", gap: "10px" }}>
           <div className="form-input-div">
             <label htmlFor="vacant-properties">Vacancies</label>
             <input
@@ -205,16 +205,16 @@ const dynamicSections1 = [
   {
     id: 0,
     heading: "Lease Applications Received",
-    inputFields: [
+    fields: [
       [
         {
-          id: 0,
+          id: 1,
           label: "Applications Received",
           placeholder: "Add number",
           value: "",
         },
         {
-          id: 0,
+          id: 2,
           label: "Address",
           placeholder: "Enter a location",
           value: "",
@@ -226,23 +226,20 @@ const dynamicSections1 = [
 
 const dynamicSections2 = [
   {
-    id: 0,
     heading: "Rent Increases",
-    inputFields: [
+    fields: [
       [{ id: 1, label: "Address", placeholder: "Enter a location", value: "" }],
     ],
   },
   {
-    id: 0,
     heading: "Rent Reductions",
-    inputFields: [
+    fields: [
       [{ id: 2, label: "Address", placeholder: "Enter a location", value: "" }],
     ],
   },
   {
-    id: 0,
     heading: "Maintenance",
-    inputFields: [
+    fields: [
       [
         { id: 3, label: "Address", placeholder: "Enter a location", value: "" },
         { id: 4, label: "Hours", placeholder: "Enter hours", value: "" },

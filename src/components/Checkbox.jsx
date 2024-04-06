@@ -1,6 +1,7 @@
 import React from "react";
 
-function Checkbox({ fontSize, width, text }) {
+function Checkbox({ id, fontSize, width, text }) {
+  console.log("Checkbox: ", text);
   return (
     <div
       style={{
@@ -11,8 +12,14 @@ function Checkbox({ fontSize, width, text }) {
         alignItems: "center",
       }}
     >
-      <input type="checkbox" style={{ width: "13px", height: "13px" }} />
-      <label style={{ fontWeight: "bolder" }}>{text}</label>
+      <input
+        id={id}
+        type="checkbox"
+        style={{ width: "13px", height: "13px" }}
+      />
+      <label htmlFor={id} style={{ fontWeight: "bolder" }}>
+        {text}
+      </label>
     </div>
   );
 }
