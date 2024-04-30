@@ -17,7 +17,7 @@ function AllSales() {
       heading="All Sales"
       data={tableData}
       showFilters={true}
-      dashboard={"/dashboard/add-sales"}
+      addDataRoute={"/dashboard/add-sales"}
     />
   );
 }

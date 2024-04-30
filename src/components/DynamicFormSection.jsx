@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { colors } from "../constants/colors";
 
-function DynamicFormSection({ predefinedSection, inputWidth = "50%" }) {
+function DynamicFormSection({ predefinedSection, inputWidth = "35%" }) {
   const [section, setSection] = useState(predefinedSection);
 
   const addInputField = () => {
@@ -64,7 +64,7 @@ function DynamicFormSection({ predefinedSection, inputWidth = "50%" }) {
             {itemArray.map((item, index) => (
               <div
                 className="form-input-div"
-                style={{ width: "40%" }}
+                style={{ width: itemArray.length <= 1 ? "100%" : inputWidth }}
                 key={index}
               >
                 <label

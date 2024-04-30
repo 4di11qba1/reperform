@@ -29,7 +29,8 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-  flex-grow: 1;
+  align-self: center;
+  // flex-grow: 1;
 }
 
 .form-input-div label {
@@ -48,6 +49,6 @@
 .form-input-div-wrapper {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
 }

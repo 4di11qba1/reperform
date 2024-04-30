@@ -83,7 +83,7 @@ function SignUp({ handleShowLogin }) {
         <button
           type="submit"
           className="control-btn"
-          onClick={(e) => navigateTo(e, "/dashboard")}
+          onClick={(e) => navigateTo(e, "/subscription")}
           style={{
             color: colors.white,
             backgroundColor: colors.controlBTN,

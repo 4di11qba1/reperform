@@ -1,21 +1,29 @@
 import React from "react";
 import Checkbox from "./Checkbox";
 
-function FormSection({ sectionData, inputWidth = "50%" }) {
+function FormSection({ sectionData, inputWidth = "35%" }) {
   return (
     <>
       <div className="property-section">
         <h3>{sectionData.heading}</h3>
-        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+            flexWrap: "wrap",
+            width: "100%",
+            justifyContent: "center",
+          }}
+        >
           {sectionData.fields.map((field, index) => (
             <React.Fragment key={index}>
               {field.map((item, index) => (
                 <React.Fragment key={index}>
-                  {field.type === "checkbox" ? (
+                  {item.type === "checkbox" ? (
                     <Checkbox
                       id={item.id}
                       fontSize={"13px"}
-                      width={"13px"}
+                      width={"100%"}
                       text={item.text}
                     />
                   ) : (

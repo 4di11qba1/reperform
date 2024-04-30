@@ -9,7 +9,7 @@ function Property() {
     <Form heading={"Property Management - Daily Log"}>
       <div className="property-section">
         <h4>Market Appraisals Booked</h4>
-        <div className="form-input-div" style={{ width: "50%" }}>
+        <div className="form-input-div" style={{ width: "35%" }}>
           <label htmlFor="appraisals">Number</label>
           <input
             id="appraisals"
@@ -22,7 +22,7 @@ function Property() {
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>New Managements Signed</h4>
-        <div className="form-input-div" style={{ width: "50%" }}>
+        <div className="form-input-div" style={{ width: "35%" }}>
           <label htmlFor="mgmt">Number</label>
           <input
             id="mgmt"
@@ -35,7 +35,7 @@ function Property() {
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>Lost Managements</h4>
-        <div className="form-input-div" style={{ width: "50%" }}>
+        <div className="form-input-div" style={{ width: "35%" }}>
           <label htmlFor="lost-mgmt">Number</label>
           <input
             id="lost-mgmt"
@@ -60,7 +60,7 @@ function Property() {
 
       <div className="property-section">
         <h4>New Lease Signings</h4>
-        <div className="form-input-div" style={{ width: "50%" }}>
+        <div className="form-input-div" style={{ width: "35%" }}>
           <label htmlFor="lease">Number</label>
           <input
             id="lease"
@@ -73,7 +73,7 @@ function Property() {
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>Routine Inspections</h4>
-        <div className="form-input-div" style={{ width: "50%" }}>
+        <div className="form-input-div" style={{ width: "35%" }}>
           <label htmlFor="inspection">Number</label>
           <input
             id="inspection"
@@ -86,7 +86,7 @@ function Property() {
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>Ingoing Inspection Reports</h4>
-        <div className="form-input-div" style={{ width: "50%" }}>
+        <div className="form-input-div" style={{ width: "35%" }}>
           <label htmlFor="in-inspection">Number</label>
           <input
             id="in-inspection"
@@ -99,7 +99,7 @@ function Property() {
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>Outgoing Inspection Reports</h4>
-        <div className="form-input-div" style={{ width: "50%" }}>
+        <div className="form-input-div" style={{ width: "35%" }}>
           <label htmlFor="out-inspection">Number</label>
           <input
             id="out-inspection"
@@ -112,7 +112,7 @@ function Property() {
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>Vacate Notices Received</h4>
-        <div className="form-input-div" style={{ width: "50%" }}>
+        <div className="form-input-div" style={{ width: "35%" }}>
           <label htmlFor="notices">Number</label>
           <input
             id="notices"
@@ -149,7 +149,7 @@ function Property() {
       <Divider orientation={"h"} width={"1.5px"} />
       <div className="property-section">
         <h4>Arrears</h4>
-        <div className="form-input-div" style={{ width: "50%" }}>
+        <div className="form-input-div" style={{ width: "35%" }}>
           <label htmlFor="arrears">Amount $</label>
           <input
             id="arrears"
@@ -174,7 +174,7 @@ function Property() {
 
       <div className="property-section">
         <h4>Tribunal Matters</h4>
-        <div className="form-input-div" style={{ width: "50%" }}>
+        <div className="form-input-div" style={{ width: "35%" }}>
           <label htmlFor="tribunal">Address</label>
           <input
             id="tribunal"

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { colors } from "../constants/colors";
 import Divider from "./Divider";
 import FormSection from "./FormSection";
 import DynamicFormSection from "./DynamicFormSection";
+import { useNavigate } from "react-router-dom";
+import Success from "./Success";
 
 const FormStep = ({
   step,
@@ -12,7 +14,22 @@ const FormStep = ({
   handleBack,
   length,
 }) => {
-  return (
+  const [success, setSuccess] = useState(false);
+  const nav = useNavigate();
+
+  const handleSuccess = (e) => {
+    e.preventDefault();
+    setSuccess(true);
+
+    // Redirect to '/dashboard/' after 3 seconds
+    setTimeout(() => {
+      nav("/dashboard/");
+      setSuccess(false);
+    }, 3000);
+  };
+  return success ? (
+    <Success text={"Submitted Successfully"} />
+  ) : (
     <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
       {stepContent.sections.map((section, index) => (
         <React.Fragment key={index}>
@@ -24,7 +41,7 @@ const FormStep = ({
           ) : (
             <>
               <Divider orientation={"h"} width={"1.5px"} />
-              <FormSection sectionData={section} inputWidth="50%" />
+              <FormSection sectionData={section} />
             </>
           )}
         </React.Fragment>
@@ -68,7 +85,7 @@ const FormStep = ({
               backgroundColor: colors.controlBTN,
             }}
             type="submit"
-            onClick={(e) => handleBack(e)}
+            onClick={(e) => handleSuccess(e)}
           >
             Submit
           </button>

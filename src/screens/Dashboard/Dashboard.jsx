@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "../../components/Sidebar";
 import Topbar from "../../components/Topbar";
 import { Routes, Route } from "react-router-dom";
@@ -12,10 +12,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import AddSales from "./Sales/AddSales";
 import AllSales from "./Sales/AllSales";
+import Success from "../../components/Success";
 
 function Dashboard({ openSidebar, handleSideBar }) {
   const location = useLocation();
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [widthWindow, setWidthWindow] = useState(window.innerWidth);
 
   // Function to handle drawer open/close
   const handleDrawer = () => {
@@ -30,6 +32,8 @@ function Dashboard({ openSidebar, handleSideBar }) {
           user={user}
           openDrawer={openDrawer}
           handleDrawer={handleDrawer}
+          openSidebar={openSidebar}
+          handleSideBar={handleSideBar}
         />
         <div
           className="dashboard-body"
@@ -62,6 +66,7 @@ function Dashboard({ openSidebar, handleSideBar }) {
                 />
                 <Route exact path="/add-sales" element={<AddSales />} />
                 <Route exact path="/all-sales" element={<AllSales />} />
+                <Route exact path="/all-sales/edit" element={<AddSales />} />
                 <Route
                   exact
                   path="/targets/*"
@@ -73,6 +78,17 @@ function Dashboard({ openSidebar, handleSideBar }) {
                   exact
                   path="/all-properties"
                   element={<AllProperties />}
+                />
+                <Route
+                  exact
+                  path="/all-properties/edit"
+                  element={<AddProperty />}
+                />
+
+                <Route
+                  exact
+                  path="/success"
+                  element={<Success text={"Submitted Successfully."} />}
                 />
               </Routes>
             </motion.div>

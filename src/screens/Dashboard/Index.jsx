@@ -118,13 +118,13 @@ const areaGraphData = {
 //Donut Graph
 const donutActual = 150;
 const donutTarget = 250;
-const donutRemaining = donutTarget - donutActual;
+const donutRequired = donutTarget - donutActual;
 
 const donutGraphData = {
-  labels: ["Actual", "Remaining"],
+  labels: ["Actual", "Required"],
   datasets: [
     {
-      data: [donutActual, donutRemaining],
+      data: [donutActual, donutRequired],
       backgroundColor: [colors.controlBTN, colors.border],
       hoverOffset: 4,
     },

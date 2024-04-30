@@ -1,9 +1,17 @@
 import React from "react";
 import { colors } from "../constants/colors";
 import Drawer from "./Drawer";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-function Topbar({ user, openDrawer, handleDrawer }) {
+function Topbar({
+  user,
+  openDrawer,
+  handleDrawer,
+  openSidebar,
+  handleSideBar,
+}) {
   const drawerRef = useRef(null);
 
   useEffect(() => {
@@ -32,6 +40,29 @@ function Topbar({ user, openDrawer, handleDrawer }) {
         border: `1px solid ${colors.border}`,
       }}
     >
+      <div
+        className="logo-details"
+        style={{
+          width: "100%",
+          height: "100%",
+          marginTop: "15px",
+          zIndex: "9999",
+          justifySelf: "flex-start",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <FontAwesomeIcon
+          className="bars"
+          icon={faBars}
+          onClick={handleSideBar}
+          style={{
+            marginRight: "90%",
+            fontSize: "20px",
+            color: colors.text,
+          }}
+        />
+      </div>
       <div className="topbar-content" onClick={handleDrawer}>
         <div className="user-name">{user.userName}</div>
         <div className="user-email hoverable" style={{ color: colors.dimText }}>

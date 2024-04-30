@@ -7,22 +7,22 @@ function UserProfile() {
       <Form heading={"Edit User"}>
         <div className="user-form-body">
           <div className="form-input-div-wrapper">
-            <div className="form-input-div">
+            <div className="form-input-div" style={{ width: "100%" }}>
               <label htmlFor="name" aria-label="Name">
                 Name
               </label>
               <input id="name" type="text" name="name" placeholder="Name" />
             </div>
-            <div className="form-input-div">
+            <div className="form-input-div" style={{ width: "100%" }}>
               <label htmlFor="email" aria-label="Email">
-                Name
+                Email
               </label>
               <input id="email" type="text" name="email" placeholder="Email" />
             </div>
           </div>
 
           <div className="form-input-div-wrapper">
-            <div className="form-input-div">
+            <div className="form-input-div" style={{ width: "100%" }}>
               <label htmlFor="mobile" aria-label="Mobile">
                 Mobile
               </label>
@@ -33,7 +33,7 @@ function UserProfile() {
                 placeholder="Mobile"
               />
             </div>
-            <div className="form-input-div">
+            <div className="form-input-div" style={{ width: "100%" }}>
               <label htmlFor="office" aria-label="Office Name">
                 Office Name
               </label>
@@ -47,7 +47,7 @@ function UserProfile() {
           </div>
 
           <div className="form-input-div-wrapper">
-            <div className="form-input-div">
+            <div className="form-input-div" style={{ width: "100%" }}>
               <label htmlFor="principal" aria-label="Principal Code">
                 Principal Code
               </label>
@@ -60,7 +60,7 @@ function UserProfile() {
             </div>
             <div
               className="form-input-div"
-              style={{ width: "14.5%", alignSelf: "flex-end" }}
+              style={{ width: "100%", alignSelf: "flex-end" }}
             >
               <label htmlFor="userImage" aria-label="User Image">
                 User Image

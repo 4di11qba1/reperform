@@ -1,17 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { colors } from "../constants/colors";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faEdit, faEye } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import EyeView from "./EyeView";
 
 function Table({ heading, data, onDeleteRow, addDataRoute, showFilters }) {
+  const [showView, setShowView] = useState(false);
   const nav = useNavigate();
+
+  const handleView = (index) => {
+    setShowView(!showView);
+  };
+
+  const handleDeleteConfirmation = (index) => {
+    handleDeleteRow(index);
+  };
+
   const handleDeleteRow = (index) => {
-    onDeleteRow(index);
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this row?"
+    );
+    if (confirmDelete) {
+      onDeleteRow(index);
+    }
   };
 
   return (
     <div className="table-wrapper" style={{ backgroundColor: colors.white }}>
+      {showView && <EyeView data={data} handleView={handleView} />}
       <div className="table-header">
         <h2 style={{ color: colors.controlBTN }}>{heading}</h2>
         <div className="table-filters">
@@ -37,6 +54,7 @@ function Table({ heading, data, onDeleteRow, addDataRoute, showFilters }) {
             style={{
               color: colors.controlBTN,
               backgroundColor: colors.controlRevertBTN,
+              height: "40%",
             }}
           >
             + Add New
@@ -69,7 +87,7 @@ function Table({ heading, data, onDeleteRow, addDataRoute, showFilters }) {
                 {!showFilters ? (
                   <FontAwesomeIcon
                     icon={faTrash}
-                    onClick={() => handleDeleteRow(rowIndex)}
+                    onClick={() => handleDeleteConfirmation(rowIndex)}
                     className="table-icon table-delete-icon"
                     style={{ color: colors.controlBTN }}
                   />
@@ -79,11 +97,13 @@ function Table({ heading, data, onDeleteRow, addDataRoute, showFilters }) {
                       className="table-icon table-view-icon"
                       style={{ color: colors.controlBTN }}
                       icon={faEye}
+                      onClick={() => handleView(rowIndex)}
                     />
                     <FontAwesomeIcon
                       className="table-icon table-edit-icon"
                       style={{ color: colors.controlBTN, marginLeft: "10px" }}
                       icon={faEdit}
+                      onClick={() => nav("edit")}
                     />
                   </div>
                 )}

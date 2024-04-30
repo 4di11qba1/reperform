@@ -9,7 +9,7 @@ function AddTarget({ user }) {
       <Form heading={"Add New Target"}>
         <div className="add-target-form-body">
           <div className="form-input-div-wrapper">
-            <div className="form-input-div">
+            <div className="form-input-div" style={{ width: "100%" }}>
               <label htmlFor="fromDate">From Date</label>
               <input
                 id="fromDate"
@@ -19,7 +19,7 @@ function AddTarget({ user }) {
                 required
               />
             </div>
-            <div className="form-input-div">
+            <div className="form-input-div" style={{ width: "100%" }}>
               <label htmlFor="toDate">To Date</label>
               <input
                 id="toDate"
@@ -81,7 +81,7 @@ function AddTarget({ user }) {
                 id="listings"
                 type="number"
                 name="listings"
-                placeholder="%"
+                placeholder="Enter Number"
                 required
               />
             </div>
@@ -107,7 +107,7 @@ function AddTarget({ user }) {
                 id="presentations"
                 type="number"
                 name="presentations"
-                placeholder="%"
+                placeholder="Enter Number"
                 required
               />
             </div>
@@ -129,7 +129,7 @@ function AddTarget({ user }) {
                 id="leads"
                 type="number"
                 name="leads"
-                placeholder="%"
+                placeholder="Enter Number"
                 required
               />
             </div>
@@ -153,7 +153,7 @@ function AddTarget({ user }) {
                 id="calls"
                 type="number"
                 name="calls"
-                placeholder="%"
+                placeholder="Enter Number"
                 required
               />
             </div>
@@ -176,7 +176,7 @@ function AddTarget({ user }) {
               id="doorknocks"
               type="text"
               name="doorknocks"
-              placeholder="%"
+              placeholder="Enter Number"
               required
             />
           </div>

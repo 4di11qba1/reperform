@@ -17,6 +17,13 @@
   z-index: 1;
 }
 
+@media screen and (max-width: 750px) {
+  .dashboard-body {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+}
+
 .dashboard-content {
   display: flex;
   flex-direction: column;
